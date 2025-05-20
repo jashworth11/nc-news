@@ -28,9 +28,7 @@ export const CommentList = () => {
     <div className="comment-list">
       <h3>Comments</h3>
       {comments.length === 0 ? (
-        <p style={{ fontStyle: "italic", color: "#888" }}>
-          No comments yet. Be the first to comment!
-        </p>
+        <p>No comments yet. Be the first to comment!</p>
       ) : (
         comments.map((comment) => (
           <CommentCard key={comment.comment_id} comment={comment} />
