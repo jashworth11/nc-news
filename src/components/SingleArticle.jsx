@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArticleById } from "../../api";
+import { CommentList } from "./CommentList";
 
 export const SingleArticle = () => {
   const { article_id } = useParams();
@@ -41,6 +42,7 @@ export const SingleArticle = () => {
         <strong>Votes:</strong> {article.votes}
       </p>
       <p>{article.body}</p>
+      <CommentList />
     </div>
   );
 };
