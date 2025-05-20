@@ -67,7 +67,7 @@ a:hover {
   max-width: 700px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: white;
+  background-color: black;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
@@ -77,7 +77,7 @@ a:hover {
 }
 
 .comment-card {
-  background-color: #f1f3f5;
+  background-color: black;
   border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 6px;
@@ -88,4 +88,22 @@ a:hover {
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
+}
+.single-article button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.single-article button:hover:not(:disabled) {
+  background-color: #666;
+}
+
+.single-article button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
