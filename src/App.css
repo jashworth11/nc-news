@@ -107,3 +107,9 @@ a:hover {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.login-error {
+  color: red;
+  margin-top: 1rem;
+  font-weight: bold;
+}

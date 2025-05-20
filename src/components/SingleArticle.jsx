@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getArticleById } from "../../api";
+import { getArticleById, patchArticleVotes } from "../../api";
 import { CommentList } from "./CommentList";
-import { patchArticleVotes } from "../../api";
 
-export const SingleArticle = () => {
+export const SingleArticle = ({ user }) => {
   const { article_id } = useParams();
   const [article, setArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +17,7 @@ export const SingleArticle = () => {
         setArticle(response.data.article);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Article not found.");
         setIsLoading(false);
       });
@@ -66,7 +65,7 @@ export const SingleArticle = () => {
       {voteError}
 
       <p>{article.body}</p>
-      <CommentList />
+      <CommentList user={user} />
     </div>
   );
 };

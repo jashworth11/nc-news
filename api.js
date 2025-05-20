@@ -21,3 +21,14 @@ export const patchArticleVotes = (article_id, inc_votes) => {
     inc_votes: inc_votes,
   });
 };
+
+export const postComment = (article_id, username, body) => {
+  return api.post(`/articles/${article_id}/comments`, {
+    username,
+    body,
+  });
+};
+
+export const getAllUsers = () => {
+  return api.get("/users").then((res) => res.data.users);
+};
