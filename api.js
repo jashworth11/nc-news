@@ -1,11 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://joe-news-2.onrender.com/api",
+  baseURL: "https://jashys-nc-news.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return api.get("/articles");
+export const getArticles = (topic) => {
+  const url = topic ? `/articles?topic=${topic}` : "/articles";
+  return api.get(url);
 };
 
 export const getArticleById = (article_id) => {
@@ -35,4 +36,8 @@ export const getAllUsers = () => {
 
 export const deleteComment = (comment_id) => {
   return api.delete(`/comments/${comment_id}`);
+};
+
+export const getTopics = () => {
+  return api.get("/topics");
 };

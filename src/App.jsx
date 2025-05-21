@@ -7,6 +7,7 @@ import { SingleArticle } from "./components/SingleArticle";
 import { useState } from "react";
 import { Login } from "./components/Login";
 import { HomePage } from "./components/HomePage";
+import { TopicsList } from "./components/TopicList";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,6 +22,8 @@ function App() {
           path="/articles/:article_id"
           element={<SingleArticle user={user} />}
         />
+        <Route path="/topics" element={<TopicsList />} />
+        <Route path="/topics/:topic" element={<ArticlesList />} />
         <Route path="/login" element={<Login setUser={setUser} />} />{" "}
       </Routes>
     </>
