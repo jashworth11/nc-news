@@ -180,3 +180,19 @@ a:hover {
   margin-top: 1rem;
   color: #f1f1f1;
 }
+
+.sort-controls {
+  margin: 1rem auto;
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sort-controls label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #f1f1f1;
+}
