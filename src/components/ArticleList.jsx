@@ -17,8 +17,12 @@ export const ArticlesList = () => {
         setArticles(res.data.articles);
         setIsLoading(false);
       })
-      .catch(() => {
-        setError("Failed to load articles");
+      .catch((err) => {
+        if (err.response?.status === 404) {
+          setError("That topic doesn't exist.");
+        } else {
+          setError("Failed to load articles.");
+        }
         setIsLoading(false);
       });
   }, [topic]);

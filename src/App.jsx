@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Login } from "./components/Login";
 import { HomePage } from "./components/HomePage";
 import { TopicsList } from "./components/TopicList";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/topics" element={<TopicsList />} />
         <Route path="/topics/:topic" element={<ArticlesList />} />
         <Route path="/login" element={<Login setUser={setUser} />} />{" "}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
