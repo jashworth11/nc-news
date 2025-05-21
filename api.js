@@ -4,8 +4,9 @@ const api = axios.create({
   baseURL: "https://jashys-nc-news.onrender.com/api",
 });
 
-export const getArticles = (topic) => {
-  const url = topic ? `/articles?topic=${topic}` : "/articles";
+export const getArticles = (topic, sortBy = "created_at", order = "desc") => {
+  let url = `/articles?sort_by=${sortBy}&order=${order}`;
+  if (topic) url += `&topic=${topic}`;
   return api.get(url);
 };
 
