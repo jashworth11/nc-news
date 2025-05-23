@@ -35,16 +35,20 @@ export const ArticlesList = () => {
   if (isLoading) return <p>Loading articles...</p>;
 
   return (
-    <div className="article-list">
+    <div className="articles-page">
       <h2>{topic ? `Articles about ${topic}` : "All Articles"}</h2>
-      <SortControls />
-      {articles.length === 0 ? (
-        <p>No articles found for this topic.</p>
-      ) : (
-        articles.map((article) => (
-          <ArticleCard key={article.article_id} article={article} />
-        ))
-      )}
+      <div className="sort-wrapper">
+        <SortControls />
+      </div>
+      <div className="article-list">
+        {articles.length === 0 ? (
+          <p>No articles found for this topic.</p>
+        ) : (
+          articles.map((article) => (
+            <ArticleCard key={article.article_id} article={article} />
+          ))
+        )}
+      </div>
     </div>
   );
 };
